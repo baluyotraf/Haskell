@@ -14,3 +14,11 @@ dropInt n (x:xs) = dropInt (n-1) xs
 sumInt :: [Int] -> Int
 sumInt [] = 0
 sumInt (x:xs) = x + sumInt(xs)
+
+--Gets the running totals
+scanSum :: [Int] -> [Int]
+scanSum [] = []
+scanSum list = scanSum' 0 list
+    where
+    scanSum' _ [] = []
+    scanSum' n (x:xs) = x+n:(scanSum' (x+n) xs)
