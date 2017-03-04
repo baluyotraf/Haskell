@@ -22,3 +22,9 @@ scanSum list = scanSum' 0 list
     where
     scanSum' _ [] = []
     scanSum' n (x:xs) = x+n:(scanSum' (x+n) xs)
+
+--Gets the difference between the items
+diffs :: [Int] -> [Int]
+diffs [] = []
+diffs (x:[]) = []
+diffs (x:y:ys) = (y-x):(diffs (y:ys))
