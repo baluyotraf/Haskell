@@ -1,2 +1,2 @@
-# NameExecise
+# Haskell
 Execise from Haskell Wiki Books
