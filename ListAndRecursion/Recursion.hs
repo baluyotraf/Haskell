@@ -9,3 +9,8 @@ dropInt :: Int -> [Int] -> [Int]
 dropInt _ [] = []
 dropInt 0 list = list
 dropInt n (x:xs) = dropInt (n-1) xs
+
+--Get the sum of elements in an integer array
+sumInt :: [Int] -> Int
+sumInt [] = 0
+sumInt (x:xs) = x + sumInt(xs)
