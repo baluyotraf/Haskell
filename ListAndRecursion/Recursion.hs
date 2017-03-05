@@ -32,3 +32,9 @@ diffs (x:y:ys) = (y-x):(diffs (y:ys))
 --Negates all elements in an integer list
 negateIntList :: [Int] -> [Int]
 negateIntList list = map negate list
+
+--Gets all the divisors from an integer list
+getDivisors :: [Int] -> [[Int]]
+getDivisors list  = map divisors list
+    where
+    divisors n = [f | f <- [1 .. n], n `mod` f == 0]
