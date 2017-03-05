@@ -38,3 +38,7 @@ getDivisors :: [Int] -> [[Int]]
 getDivisors list  = map divisors list
     where
     divisors n = [f | f <- [1 .. n], n `mod` f == 0]
+
+--Gets all the negated divisors from an integer list
+getNegatedDivisors :: [Int] -> [[Int]]
+getNegatedDivisors = map negateIntList . getDivisors
