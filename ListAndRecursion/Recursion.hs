@@ -42,3 +42,9 @@ getDivisors list  = map divisors list
 --Gets all the negated divisors from an integer list
 getNegatedDivisors :: [Int] -> [[Int]]
 getNegatedDivisors = map negateIntList . getDivisors
+
+--Gets the last element of an integer list
+getLast :: [Int] -> Int
+getLast [] = error "getLast: empty list"
+getLast [x] = x
+getLast (_:xs) = getLast(xs)
