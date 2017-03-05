@@ -48,3 +48,9 @@ getLast :: [Int] -> Int
 getLast [] = error "getLast: empty list"
 getLast [x] = x
 getLast (_:xs) = getLast(xs)
+
+--Gets the starting elements of an integer list without the last
+getInit :: [Int] -> [Int]
+getInit [] = error "getInit: empty list"
+getInit [x] = []
+getInit (x:xs) = x:(getInit xs)
