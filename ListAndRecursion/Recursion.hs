@@ -28,3 +28,7 @@ diffs :: [Int] -> [Int]
 diffs [] = []
 diffs (x:[]) = []
 diffs (x:y:ys) = (y-x):(diffs (y:ys))
+
+--Negates all elements in an integer list
+negateIntList :: [Int] -> [Int]
+negateIntList list = map negate list
