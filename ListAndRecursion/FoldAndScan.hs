@@ -1,8 +1,8 @@
 --Applies and operation in all elements in the list
-getAnd :: [Bool] -> Bool
-getAnd [] = error "getAnd: empty list"
-getAnd list = foldr (&&) True list
+and :: [Bool] -> Bool
+and [] = error "and: empty list"
+and list = foldr (&&) True list
 
-getOr :: [Bool] -> Bool
-getOr [] = error "getOr: empty list"
-getOr list = foldr (||) False list
+or :: [Bool] -> Bool
+or [] = error "or: empty list"
+or list = foldr (||) False list
