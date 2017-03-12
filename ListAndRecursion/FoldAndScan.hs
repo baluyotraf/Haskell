@@ -78,3 +78,7 @@ returnDivisible i arr = [ x | x <- arr, x `mod` i == 0]
 --Returns the tails if the head is greater than
 choosingTails :: [[Int]] -> [[Int]]
 choosingTails arr = [ xs | (x:xs) <- arr, x > 5 ]
+
+--List comprehension impementation of the filter function
+fs_filter :: (a -> Bool) -> [a] -> [a]
+fs_filter f arr = [ x | x <- arr, f x ]
