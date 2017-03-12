@@ -82,3 +82,7 @@ choosingTails arr = [ xs | (x:xs) <- arr, x > 5 ]
 --List comprehension impementation of the filter function
 fs_filter :: (a -> Bool) -> [a] -> [a]
 fs_filter f arr = [ x | x <- arr, f x ]
+
+--List comprehension implementation of the map function
+fs_map :: (a -> b) -> [a] -> [b]
+fs_map f arr = [ f x | x <- arr ]
