@@ -1,3 +1,5 @@
+import Data.List
+
 --Applies and operation in all elements in the list
 fs_and :: [Bool] -> Bool
 fs_and [] = error "fs_and: empty list"
@@ -48,3 +50,8 @@ rec_scanl f acc list = rec_scanl' f [acc] list
             where
                 newAcc = acc ++ [(f.last) acc x]
                 newList = xs
+
+fold_scanl :: (b -> a -> b) -> b -> [a] -> [b]
+fold_scanl f acc list = foldl' f' [acc] list
+    where
+        f' acc element = acc ++ [(f.last) acc element]
