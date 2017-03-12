@@ -1,11 +1,11 @@
 --Applies and operation in all elements in the list
-and :: [Bool] -> Bool
-and [] = error "and: empty list"
-and list = foldr (&&) True list
+fs_and :: [Bool] -> Bool
+fs_and [] = error "fs_and: empty list"
+fs_and list = foldr (&&) True list
 
-or :: [Bool] -> Bool
-or [] = error "or: empty list"
-or list = foldr (||) False list
+fs_or :: [Bool] -> Bool
+fs_or [] = error "fs_or: empty list"
+fs_or list = foldr (||) False list
 
 fs_maximum [] = error "fs_maximum: empty list"
 fs_maximum list = foldr1 higher list
