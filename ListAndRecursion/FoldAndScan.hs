@@ -39,3 +39,12 @@ fold_scanr :: (a -> b -> b) -> b -> [a] -> [b]
 fold_scanr f acc list = foldr f' [acc] list
     where
         f' element (x:xs) = (f element x) : x : xs
+
+rec_scanl :: (b -> a -> b) -> b -> [a] -> [b]
+rec_scanl f acc list = rec_scanl' f [acc] list
+    where
+        rec_scanl' _ acc [] = acc
+        rec_scanl' f acc (x:xs) = rec_scanl' f newAcc newList
+            where
+                newAcc = acc ++ [(f.last) acc x]
+                newList = xs
