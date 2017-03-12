@@ -25,3 +25,13 @@ fs_reverse [] = []
 fs_reverse list = foldr append [] list
     where
         append a b = b ++ [a]
+
+rec_scanr :: (a -> b -> b) -> b -> [a] -> [b]
+rec_scanr f acc list = rec_scanr' f acc list []
+    where
+        rec_scanr' f acc [] total = acc:total
+        rec_scanr' f acc list total = rec_scanr' f newAcc newList newTotal
+            where
+                newAcc = f (last list) acc
+                newList = init list
+                newTotal = acc:total
