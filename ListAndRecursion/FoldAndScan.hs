@@ -70,3 +70,7 @@ factList i
     | i < 0 = error "factList: cannot be less than 0"
     | i == 0 = [1]
     | otherwise = scanl1 (*) [1..i]
+
+--Returns all numbers divisible by a number from a given list
+returnDivisible :: Int -> [Int] -> [Int]
+returnDivisible i arr = [ x | x <- arr, x `mod` i == 0]
