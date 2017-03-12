@@ -74,3 +74,7 @@ factList i
 --Returns all numbers divisible by a number from a given list
 returnDivisible :: Int -> [Int] -> [Int]
 returnDivisible i arr = [ x | x <- arr, x `mod` i == 0]
+
+--Returns the tails if the head is greater than
+choosingTails :: [[Int]] -> [[Int]]
+choosingTails arr = [ xs | (x:xs) <- arr, x > 5 ]
