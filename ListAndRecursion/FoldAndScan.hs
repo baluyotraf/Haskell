@@ -20,3 +20,8 @@ fs_minimum list = foldr1 lower list
         lower a b
             | a < b = a
             | otherwise = b
+
+fs_reverse [] = []
+fs_reverse list = foldr append [] list
+    where
+        append a b = b ++ [a]
