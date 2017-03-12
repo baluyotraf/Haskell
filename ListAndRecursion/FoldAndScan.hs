@@ -35,3 +35,8 @@ rec_scanr f acc list = rec_scanr' f acc list []
                 newAcc = f (last list) acc
                 newList = init list
                 newTotal = acc:total
+
+fold_scanr :: (a -> b -> b) -> b -> [a] -> [b]
+fold_scanr f acc list = foldr f' [acc] list
+    where
+        f' element (x:xs) = (f element x) : x : xs
