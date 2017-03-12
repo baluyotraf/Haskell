@@ -10,6 +10,13 @@ or list = foldr (||) False list
 fs_maximum [] = error "fs_maximum: empty list"
 fs_maximum list = foldr1 higher list
     where
-    higher a b
-        | a > b = a
-        | otherwise = b
+        higher a b
+            | a > b = a
+            | otherwise = b
+
+fs_minimum [] = error "fs_minimum: empty list"
+fs_minimum list = foldr1 lower list
+    where
+        lower a b
+            | a < b = a
+            | otherwise = b
