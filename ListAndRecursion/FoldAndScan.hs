@@ -37,16 +37,16 @@ rec_scanr :: (a -> b -> b) -> b -> [a] -> [b]
 rec_scanr f acc list = rec_scanr' f [acc] list
     where
         rec_scanr' f acc [] = acc
-        rec_scanr' f (a:as) list = rec_scanr' f newTotal newList
+        rec_scanr' f aa@(a:as) list = rec_scanr' f newTotal newList
             where
                 newList = init list
-                newTotal = ((f.last) list a):a:as
+                newTotal = ((f.last) list a):aa
 
 --Fold implementation of scanr
 fold_scanr :: (a -> b -> b) -> b -> [a] -> [b]
 fold_scanr f acc list = foldr f' [acc] list
     where
-        f' element (x:xs) = (f element x) : x : xs
+        f' element xx@(x:xs) = (f element x):xx
 
 --Recursive implementation of scanl
 rec_scanl :: (b -> a -> b) -> b -> [a] -> [b]
