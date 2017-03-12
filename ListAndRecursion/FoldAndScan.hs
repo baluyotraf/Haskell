@@ -86,3 +86,10 @@ fs_filter f arr = [ x | x <- arr, f x ]
 --List comprehension implementation of the map function
 fs_map :: (a -> b) -> [a] -> [b]
 fs_map f arr = [ f x | x <- arr ]
+
+--Doubles the first element in a tuple if the second is even
+doubleOfFirstForEvenSeconds :: [(Int, Int)] -> [Int]
+doubleOfFirstForEvenSeconds = doubleFirst . evenSecond
+    where
+        doubleFirst = map (\ (a,b) -> a * 2)
+        evenSecond = filter (\ (a,b) -> b `mod` 2 == 0)
