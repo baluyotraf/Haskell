@@ -63,3 +63,10 @@ fold_scanl :: (b -> a -> b) -> b -> [a] -> [b]
 fold_scanl f acc list = foldl' f' [acc] list
     where
         f' acc element = acc ++ [(f.last) acc element]
+
+--Gets all factorials from the given number
+factList :: Integer -> [Integer]
+factList i
+    | i < 0 = error "factList: cannot be less than 0"
+    | i == 0 = [1]
+    | otherwise = scanl1 (*) [1..i]
